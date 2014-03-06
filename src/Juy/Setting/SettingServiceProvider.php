@@ -28,8 +28,6 @@ class SettingServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//$this->package('juy/settings', 'settings');
-		
 		$this->app['setting'] = $this->app->share(function($app)
 		{
 			return new Setting;
@@ -42,7 +40,6 @@ class SettingServiceProvider extends ServiceProvider {
 			$loader->alias('Setting', 'Juy\Setting\Facades\Setting');
 		});
 		*/
-
 	}
 	
     /**
@@ -53,7 +50,6 @@ class SettingServiceProvider extends ServiceProvider {
     public function provides()
     {
         return array('setting');
-		//return array();
     }
 
 }
