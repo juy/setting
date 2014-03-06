@@ -1,0 +1,27 @@
+{
+    "name": "juy/setting",
+    "description": "Database settings",
+    "keywords": ["laravel","database","settings"],
+    "authors": [
+        {
+            "name": "Sevdin Filiz",
+            "email": "angelside@users.sourceforge.net",
+            "homepage": "http://juysoft.com",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Juy\\Setting": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
