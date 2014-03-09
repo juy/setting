@@ -22,7 +22,7 @@ class Setting {
 	public static function get($key)
 	{
 		// Fetch from cache or database
-		$settings = Cache::rememberForever('setting2', function()
+		$settings = Cache::rememberForever(self::$cacheKey, function()
 		{
 			// Fetch from database
 			$settings = Model::get(array('key', 'value'));
