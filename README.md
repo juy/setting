@@ -1,20 +1,27 @@
-Store special setting, config to database. No replace normal laravel config usage, only alternative for site settings.
+Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
 
-## config/app.php additions ##
+## Installation ##
+To add juy/setting to your Laravel application, follow these steps:
 
-### Provider ###
-Need to add to the beginning/top, otherwise you may receive an error when you use the any config file.
+Add the following to your `composer.json` file:
 
-```php
-'Juy\Setting\SettingServiceProvider'
+```json
+"juy/setting" : "dev-master"
 ```
 
-### Alias ###
+Then, run `composer update` or `composer install` if you have not already installed packages.
+
+Add the below line to the `providers` array in `app/config/app.php` configuration file (*Need to add to the beginning/top, otherwise you may receive an error when you use the any config file*).
 
 ```php
-'Setting' => 'Juy\Setting\Facades\Setting'
+'Juy\Setting\SettingServiceProvider',
 ```
 
+Add the below line to the `aliases` array in `app/config/app.php` configuration file.
+
+```php
+'Setting' => 'Juy\Setting\Facades\Setting',
+```
 ## Usage ##
 
 ```php
