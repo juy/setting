@@ -4,38 +4,50 @@ use Illuminate\Support\Facades\Cache;
 
 class Setting {
 
+	/**
+	 * Cache key
+	 *
+	 * @var string
+	 */
+	private static $cacheKey = 'setting';
+
+	/**
+	 * Get setting key to value
+	 *
+	 * @param $key
+	 *
+	 * @return null
+	 */
 	public static function get($key)
 	{
-		// Setup cache key
-		$cacheKey = 'setting_' . md5($key);
-
-		// Check if in cache
-		if (Cache::has($cacheKey))
+		// Fetch from cache or database
+		$settings = Cache::rememberForever(self::$cacheKey, function()
 		{
-			return Cache::get($cacheKey);
-		}
+			return Model\Setting::all()->toArray();
+		});
 
-		// Fetch from database
-		$setting = Model\Setting::where('key', '=', $key)->first();
-
-		// If a row was found, return the value
-		if (is_object($setting) && $setting->getId())
+		// Convert key -> value array
+		foreach ($settings as $i)
 		{
-			// Store in cache
-			Cache::forever($cacheKey, $setting->value);
-
-			// Return the data
-			return $setting->value;
+			if ($key == $i['key'])
+			{
+				return $i['value'];
+			}
 		}
 
 		return null;
 	}
 
+	/**
+	 * Set setting key to value
+	 *
+	 * @param $key
+	 * @param $value
+	 *
+	 * @return bool
+	 */
 	public static function set($key, $value)
 	{
-		// Setup cache key
-		$cacheKey = 'setting_' . md5($key);
-
 		// Fetch from database
 		$setting = Model\Setting::where('key', '=', $key)->first();
 
@@ -50,20 +62,22 @@ class Setting {
 		$setting->save();
 
 		// Expire the cache
-		Cache::forget($cacheKey);
+		Cache::forget(self::$cacheKey);
 
 		return true;
 	}
 
+	/**
+	 * Get settings from array
+	 *
+	 * @param array $data
+	 *
+	 * @return bool
+	 */
 	public static function insert($data = array())
 	{
 		foreach ($data as $key => $value)
 		{
-			$key = str_replace('_', '.', $key);
-
-			// Setup cache key
-			$cacheKey = 'setting_' . md5($key);
-
 			// Fetch from database
 			$setting = Model\Setting::where('key', '=', $key)->first();
 
@@ -72,7 +86,7 @@ class Setting {
 			$setting->save();
 
 			// Expire the cache
-			Cache::forget($cacheKey);
+			Cache::forget(self::$cacheKey);
 		}
 
 		return true;
