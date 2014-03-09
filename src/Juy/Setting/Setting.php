@@ -1,6 +1,7 @@
 <?php namespace Juy\Setting;
 
 use Illuminate\Support\Facades\Cache;
+use Juy\Setting\Model\Setting as Model;
 
 class Setting {
 
@@ -21,21 +22,22 @@ class Setting {
 	public static function get($key)
 	{
 		// Fetch from cache or database
-		$settings = Cache::rememberForever(self::$cacheKey, function()
+		$settings = Cache::rememberForever('setting2', function()
 		{
-			return Model\Setting::all()->toArray();
+			// Fetch from database
+			$settings = Model::get(array('key', 'value'));
+
+			// Convert key -> value array
+			$arr = array();
+			foreach ($settings as $i)
+			{
+				$arr[$i->key] = $i->value;
+			}
+
+			return $arr;
 		});
 
-		// Convert key -> value array
-		foreach ($settings as $i)
-		{
-			if ($key == $i['key'])
-			{
-				return $i['value'];
-			}
-		}
-
-		return null;
+		return (isset($settings[$key])) ? $settings[$key] : null;
 	}
 
 	/**
@@ -49,7 +51,7 @@ class Setting {
 	public static function set($key, $value)
 	{
 		// Fetch from database
-		$setting = Model\Setting::where('key', '=', $key)->first();
+		$setting = Model::where('key', '=', $key)->first();
 
 		// If nothing was found, create a new object
 		if (!is_object($setting))
@@ -79,7 +81,7 @@ class Setting {
 		foreach ($data as $key => $value)
 		{
 			// Fetch from database
-			$setting = Model\Setting::where('key', '=', $key)->first();
+			$setting = Model::where('key', '=', $key)->first();
 
 			// Set the values
 			$setting->value = $value;
