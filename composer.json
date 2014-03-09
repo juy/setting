@@ -1,6 +1,6 @@
 {
     "name": "juy/setting",
-    "description": "Database settings",
+    "description": "Laravel database settings",
     "keywords": ["laravel","database","settings"],
     "authors": [
         {
