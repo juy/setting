@@ -21,21 +21,57 @@ class Setting {
 	 */
 	public static function get($key)
 	{
-		// Fetch from cache or database
-		$settings = Cache::rememberForever(self::$cacheKey, function()
+		/*
+		if (!$settings = Cache::get(self::$cacheKey))
 		{
-			// Fetch from database
-			$settings = Model::get(array('key', 'value'));
-
-			// Convert key -> value array
-			$arr = array();
-			foreach ($settings as $i)
+			try
 			{
-				$arr[$i->key] = $i->value;
-			}
+				// Fetch from database
+				$settings = Model::get(array('key', 'value'));
 
-			return $arr;
-		});
+				// Convert key -> value array
+				$arr = array();
+				foreach ($settings as $i)
+				{
+					$arr[$i->key] = $i->value;
+				}
+				var_dump($arr);
+
+				Cache::forever(self::$cacheKey, $arr);
+			}
+			catch(\Exception $e)
+			{
+				return false;
+			}
+		}
+		*/
+
+		if (Cache::has(self::$cacheKey))
+		{
+			$settings = Cache::get(self::$cacheKey);
+		}
+		else
+		{
+			try
+			{
+				// Fetch from database
+				$settings = Model::get(array('key', 'value'));
+
+				// Convert key -> value array
+				$arr = array();
+				foreach ($settings as $i)
+				{
+					$arr[$i->key] = $i->value;
+				}
+
+				Cache::forever(self::$cacheKey, $arr);
+			}
+			catch(\Exception $e)
+			{
+				return false;
+			}
+		}
+
 
 		return (isset($settings[$key])) ? $settings[$key] : null;
 	}
