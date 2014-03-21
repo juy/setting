@@ -1,4 +1,12 @@
+## Laravel database settings
+[![Latest Stable Version][version-img]][version-url] [![Latest Unstable Version][unstable-img]][unstable-url] [![Total Downloads] [downloads-img]][downloads-url] [![License][license-img]][license-url]
+
 Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
+
+## Help support this project ##
+If you'd like to support this and other our creations projects, donate via [PayPal][paypal-donate-url] or [Gittip][gittip-donate-url].
+
+[![Support via PayPal][paypal-donate-img]][paypal-donate-url] [![Support via PayPal][gittip-donate-img]][gittip-donate-url]
 
 ## Installation ##
 To add juy/setting to your Laravel application, follow these steps:
@@ -90,3 +98,21 @@ class SettingsTableSeeder extends \Seeder {
 	}
 }
 ```
+## License ##
+This project is open-sourced software licensed under the [MIT license][mit-url].
+
+[version-img]: https://poser.pugx.org/juy/setting/v/stable.png
+[version-url]: https://packagist.org/packages/juy/setting
+[unstable-img]: https://poser.pugx.org/juy/setting/v/unstable.png
+[unstable-url]: https://packagist.org/packages/juy/setting
+[downloads-img]: https://poser.pugx.org/juy/setting/downloads.png
+[downloads-url]: https://packagist.org/packages/juy/setting
+[license-img]: https://poser.pugx.org/juy/setting/license.png
+[license-url]: https://packagist.org/packages/juy/setting
+
+[paypal-donate-img]: http://img.shields.io/badge/PayPal-donate-brightgreen.svg
+[paypal-donate-url]: http://j.mp/1hON5YR
+[gittip-donate-img]: http://img.shields.io/badge/Gittip-donate-brightgreen.svg
+[gittip-donate-url]: https://www.gittip.com/angelside
+
+[mit-url]: http://opensource.org/licenses/MIT
