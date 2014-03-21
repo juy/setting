@@ -3,13 +3,13 @@
 
 Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
 
-## Help support this project ##
+## Help support this project
 If you'd like to support this and other our creations projects, donate via [PayPal][paypal-donate-url] or [Gittip][gittip-donate-url].
 
 [![Support via PayPal][paypal-donate-img]][paypal-donate-url] [![Support via PayPal][gittip-donate-img]][gittip-donate-url]
 
 ----------
-## Installation ##
+## Installation
 To add juy/setting to your Laravel application, follow these steps:
 
 Add the following to your `composer.json` file:
@@ -31,7 +31,7 @@ Add the below line to the `aliases` array in `app/config/app.php` configuration 
 ```php
 'Setting' => 'Juy\Setting\Facades\Setting',
 ```
-## Usage ##
+## Usage
 
 ```php
 // Get single value
@@ -48,13 +48,13 @@ $post = Input::except('_token'); // except for token
 Setting::insert($post);
 ```
 
-## Migration ##
+## Migration
 
 ```shell
 php artisan migrate --package=juy/setting
 ```
 
-## Seed ##
+## Seed
 There is no seed file, create one as you want.
 
 ```php
@@ -99,7 +99,7 @@ class SettingsTableSeeder extends \Seeder {
 	}
 }
 ```
-## License ##
+## License
 This project is open-sourced software licensed under the [MIT license][mit-url].
 
 [version-img]: https://poser.pugx.org/juy/setting/v/stable.png
