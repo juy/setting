@@ -8,6 +8,7 @@ If you'd like to support this and other our creations projects, donate via [PayP
 
 [![Support via PayPal][paypal-donate-img]][paypal-donate-url] [![Support via PayPal][gittip-donate-img]][gittip-donate-url]
 
+----------
 ## Installation ##
 To add juy/setting to your Laravel application, follow these steps:
 
