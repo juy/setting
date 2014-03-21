@@ -6,7 +6,7 @@ Store special settings, configs to database. No replace normal laravel config us
 ## Help support this project
 If you'd like to support this and other our creations projects, donate via [PayPal][paypal-donate-url] or [Gittip][gittip-donate-url].
 
-[![Support via PayPal][paypal-donate-img]][paypal-donate-url] [![Support via PayPal][gittip-donate-img]][gittip-donate-url]
+[![Support via PayPal][paypal-donate-img]][paypal-donate-url] [![Support via Gittip][gittip-donate-img]][gittip-donate-url]
 
 ----------
 ## Installation
