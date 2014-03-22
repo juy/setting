@@ -2,12 +2,13 @@
     "name": "juy/setting",
     "description": "Laravel database settings",
     "keywords": ["laravel","database","settings"],
+    "homepage": "http://github.com/juy/setting",
     "authors": [
         {
             "name": "Sevdin Filiz",
+            "role": "Developer",
             "email": "angelside@users.sourceforge.net",
             "homepage": "http://juysoft.com",
-            "role": "Developer"
         }
     ],
     "license": "MIT",
