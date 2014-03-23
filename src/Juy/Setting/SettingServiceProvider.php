@@ -1,6 +1,7 @@
 <?php namespace Juy\Setting;
 
 use Illuminate\Support\ServiceProvider;
+//use Illuminate\Foundation\AliasLoader;
 
 class SettingServiceProvider extends ServiceProvider {
 
@@ -32,11 +33,12 @@ class SettingServiceProvider extends ServiceProvider {
 		{
 			return new Setting;
 		});
-		
+
 		/*
+		// Auto alias
 		$this->app->booting(function()
 		{
-			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
+			$loader = AliasLoader::getInstance();
 			$loader->alias('Setting', 'Juy\Setting\Facades\Setting');
 		});
 		*/

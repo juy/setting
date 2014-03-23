@@ -10,7 +10,7 @@ class Setting {
 	 *
 	 * @var string
 	 */
-	private static $cacheKey = 'setting';
+	private $cacheKey = 'setting';
 
 	/**
 	 * Get setting key to value
@@ -19,36 +19,11 @@ class Setting {
 	 *
 	 * @return null
 	 */
-	public static function get($key)
+	public function get($key)
 	{
-		/*
-		if (!$settings = Cache::get(self::$cacheKey))
+		if (Cache::has($this->cacheKey))
 		{
-			try
-			{
-				// Fetch from database
-				$settings = Model::get(array('key', 'value'));
-
-				// Convert key -> value array
-				$arr = array();
-				foreach ($settings as $i)
-				{
-					$arr[$i->key] = $i->value;
-				}
-				var_dump($arr);
-
-				Cache::forever(self::$cacheKey, $arr);
-			}
-			catch(\Exception $e)
-			{
-				return false;
-			}
-		}
-		*/
-
-		if (Cache::has(self::$cacheKey))
-		{
-			$settings = Cache::get(self::$cacheKey);
+			$settings = Cache::get($this->cacheKey);
 		}
 		else
 		{
@@ -64,7 +39,7 @@ class Setting {
 					$arr[$i->key] = $i->value;
 				}
 
-				Cache::forever(self::$cacheKey, $arr);
+				Cache::forever($this->cacheKey, $arr);
 			}
 			catch(\Exception $e)
 			{
@@ -84,7 +59,7 @@ class Setting {
 	 *
 	 * @return bool
 	 */
-	public static function set($key, $value)
+	public function set($key, $value)
 	{
 		// Fetch from database
 		$setting = Model::where('key', '=', $key)->first();
@@ -100,7 +75,7 @@ class Setting {
 		$setting->save();
 
 		// Expire the cache
-		Cache::forget(self::$cacheKey);
+		Cache::forget($this->cacheKey);
 
 		return true;
 	}
@@ -112,7 +87,7 @@ class Setting {
 	 *
 	 * @return bool
 	 */
-	public static function insert($data = array())
+	public function insert($data = array())
 	{
 		foreach ($data as $key => $value)
 		{
@@ -124,7 +99,7 @@ class Setting {
 			$setting->save();
 
 			// Expire the cache
-			Cache::forget(self::$cacheKey);
+			Cache::forget($this->cacheKey);
 		}
 
 		return true;
