@@ -1,5 +1,5 @@
 ## Laravel database settings
-[![Latest Stable Version][version-img]][version-url] [![Latest Unstable Version][unstable-img]][unstable-url] [![Total Downloads] [downloads-img]][downloads-url] [![License][license-img]][license-url]
+[![Still Maintained][stillmaintained-img]][stillmaintained-url] [![Latest Stable Version][version-img]][version-url] [![Latest Unstable Version][unstable-img]][unstable-url] [![Total Downloads] [downloads-img]][downloads-url] [![License][license-img]][license-url]
 
 Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
 
@@ -110,6 +110,8 @@ This project is open-sourced software licensed under the [MIT license][mit-url].
 [downloads-url]: https://packagist.org/packages/juy/setting
 [license-img]: https://poser.pugx.org/juy/setting/license.png
 [license-url]: https://packagist.org/packages/juy/setting
+[stillmaintained-img]: http://stillmaintained.com/juy/setting.png
+[stillmaintained-url]: http://stillmaintained.com/juy/setting
 
 [paypal-donate-img]: http://img.shields.io/badge/PayPal-donate-brightgreen.svg
 [paypal-donate-url]: http://j.mp/1hON5YR
