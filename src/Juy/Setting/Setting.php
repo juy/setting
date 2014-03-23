@@ -21,13 +21,9 @@ class Setting {
 	 */
 	public function get($key)
 	{
-		if (Cache::has($this->cacheKey))
+		try
 		{
-			$settings = Cache::get($this->cacheKey);
-		}
-		else
-		{
-			try
+			$settings = Cache::rememberForever($this->cacheKey, function()
 			{
 				// Fetch from database
 				$settings = Model::get(array('key', 'value'));
@@ -39,15 +35,15 @@ class Setting {
 					$arr[$i->key] = $i->value;
 				}
 
-				Cache::forever($this->cacheKey, $arr);
-			}
-			catch(\Exception $e)
-			{
-				return false;
-			}
-		}
+				return $arr;
+			});
 
-		return (isset($settings[$key])) ? $settings[$key] : $arr[$key];
+			return (isset($settings[$key])) ? $settings[$key] : null;
+		}
+		catch(\Exception $e)
+		{
+			return null;
+		}
 	}
 
 	/**
@@ -66,7 +62,8 @@ class Setting {
 		// If nothing was found, create a new object
 		if (!is_object($setting))
 		{
-			$setting = new Model\Setting();
+			$setting = new Model();
+			$setting->key = $key;
 		}
 
 		// Set the values
