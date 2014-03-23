@@ -38,7 +38,7 @@ Add the below line to the `aliases` array in `app/config/app.php` configuration 
 Setting::get('mail_driver');
 
 // Set single value
-Setting::set('mail_driver');
+Setting::set('mail_driver', 'smtp');
 
 // Set multiple key, value
 Setting::insert(array($key => $value));
