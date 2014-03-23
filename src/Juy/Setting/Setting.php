@@ -47,8 +47,7 @@ class Setting {
 			}
 		}
 
-
-		return (isset($settings[$key])) ? $settings[$key] : null;
+		return (isset($settings[$key])) ? $settings[$key] : $arr[$key];
 	}
 
 	/**
