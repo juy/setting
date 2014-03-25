@@ -4,9 +4,9 @@
 Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
 
 ## Help support this project
-If you'd like to support this and other our creations projects, donate via [PayPal][paypal-donate-url] or [Gittip][gittip-donate-url].
+If you'd like to support this and other our creations projects, donate via [PayPal][paypal-donate-url].
 
-[![Support via PayPal][paypal-donate-img]][paypal-donate-url] [![Support via Gittip][gittip-donate-img]][gittip-donate-url]
+[![Support via PayPal][paypal-donate-img]][paypal-donate-url]
 
 ----------
 ## Installation
@@ -114,8 +114,6 @@ This project is open-sourced software licensed under the [MIT license][mit-url].
 [stillmaintained-url]: http://stillmaintained.com/juy/setting
 
 [paypal-donate-img]: http://img.shields.io/badge/PayPal-donate-brightgreen.svg
-[paypal-donate-url]: http://j.mp/1hON5YR
-[gittip-donate-img]: http://img.shields.io/badge/Gittip-donate-brightgreen.svg
-[gittip-donate-url]: https://www.gittip.com/angelside
+[paypal-donate-url]: http://bit.ly/donateAngelside
 
 [mit-url]: http://opensource.org/licenses/MIT
