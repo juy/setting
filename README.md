@@ -1,7 +1,7 @@
-## Laravel database settings
-[![Still Maintained][stillmaintained-img]][stillmaintained-url] [![Latest Stable Version][version-img]][version-url] [![Latest Unstable Version][unstable-img]][unstable-url] [![Total Downloads] [downloads-img]][downloads-url] [![License][license-img]][license-url]
+# Laravel database settings
+[![Still Maintained][stillmaintained-img]][stillmaintained-url] [![Tag][tag-img]][tag-url] [![License][license-img]][license-url] [![Total Downloads] [downloads-img]][downloads-url]
 
-Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
+> Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
 
 ## Help support this project
 If you'd like to support this and other our creations projects, donate via [PayPal][paypal-donate-url].
@@ -49,7 +49,6 @@ Setting::insert($post);
 ```
 
 ## Migration
-
 ```shell
 php artisan migrate --package=juy/setting
 ```
@@ -102,18 +101,16 @@ class SettingsTableSeeder extends \Seeder {
 ## License
 This project is open-sourced software licensed under the [MIT license][mit-url].
 
-[version-img]: https://poser.pugx.org/juy/setting/v/stable.png
-[version-url]: https://packagist.org/packages/juy/setting
-[unstable-img]: https://poser.pugx.org/juy/setting/v/unstable.png
-[unstable-url]: https://packagist.org/packages/juy/setting
-[downloads-img]: https://poser.pugx.org/juy/setting/downloads.png
-[downloads-url]: https://packagist.org/packages/juy/setting
-[license-img]: https://poser.pugx.org/juy/setting/license.png
-[license-url]: https://packagist.org/packages/juy/setting
-[stillmaintained-img]: http://stillmaintained.com/juy/setting.png
+[stillmaintained-img]: http://img.shields.io/badge/project-maintained-brightgreen.svg?style=flat
 [stillmaintained-url]: http://stillmaintained.com/juy/setting
+[tag-img]: http://img.shields.io/github/tag/juy/setting.svg?style=flat
+[tag-url]: https://packagist.org/packages/juy/setting
+[license-img]: http://img.shields.io/packagist/l/juy/setting.svg?style=flat
+[license-url]: https://packagist.org/packages/juy/setting
+[downloads-img]: http://img.shields.io/packagist/dt/juy/setting.svg?style=flat
+[downloads-url]: https://packagist.org/packages/juy/setting
 
-[paypal-donate-img]: http://img.shields.io/badge/PayPal-donate-brightgreen.svg
+[paypal-donate-img]: http://img.shields.io/badge/PayPal-donate-brightgreen.svg?style=flat
 [paypal-donate-url]: http://bit.ly/donateAngelside
 
 [mit-url]: http://opensource.org/licenses/MIT
