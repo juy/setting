@@ -16,10 +16,11 @@ class Setting {
 	 * Get setting key to value
 	 *
 	 * @param $key
+	 * @param $default
 	 *
 	 * @return null
 	 */
-	public function get($key)
+	public function get($key, $default = null)
 	{
 		try
 		{
@@ -38,7 +39,7 @@ class Setting {
 				return $arr;
 			});
 
-			return (isset($settings[$key])) ? $settings[$key] : null;
+			return (isset($settings[$key])) ? $settings[$key] : ( ($default) ? $default : null );
 		}
 		catch(\Exception $e)
 		{
