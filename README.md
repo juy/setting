@@ -37,11 +37,14 @@ Add the below line to the `aliases` array in `app/config/app.php` configuration 
 // Get single value
 Setting::get('mail_driver');
 
+// Get single value with default value
+Setting::get('mail_driver', 'default value');
+
 // Set single value
 Setting::set('mail_driver', 'smtp');
 
 // Set multiple key, value
-Setting::insert(array($key => $value));
+Setting::insert([$key => $value]);
 
 // Set key, value from form post data
 $post = Input::except('_token'); // except for token
@@ -67,33 +70,16 @@ class SettingsTableSeeder extends \Seeder {
 	{
 		DB::table('settings')->truncate();
 
-		Setting::insert(array(
-			// Mail
-			array(
+		Setting::insert([
+			[
 				'key'	=> 'mail_driver',
 				'value'	=> 'smtp'
-			),
-			array(
+			],
+			[
 				'key'	=> 'mail_host',
 				'value'	=> 'smtp.mailgun.org'
-			),
-			array(
-				'key'	=> 'mail_port',
-				'value'	=> '587'
-			),
-			array(
-				'key'	=> 'mail_encrypt',
-				'value'	=> 'tls'
-			),
-			array(
-				'key'	=> 'mail_smtpUser',
-				'value'	=> ''
-			),
-			array(
-				'key'	=> 'mail_smtpPass',
-				'value'	=> ''
-			)
-		));
+			],
+		]);
 
 	}
 }
