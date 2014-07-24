@@ -27,10 +27,10 @@ class Setting {
 			$settings = Cache::rememberForever($this->cacheKey, function()
 			{
 				// Fetch from database
-				$settings = Model::get(array('key', 'value'));
+				$settings = Model::get(['key', 'value']);
 
 				// Convert key -> value array
-				$arr = array();
+				$arr = [];
 				foreach ($settings as $i)
 				{
 					$arr[$i->key] = $i->value;
@@ -39,7 +39,7 @@ class Setting {
 				return $arr;
 			});
 
-			return (isset($settings[$key])) ? $settings[$key] : ( ($default) ? $default : null );
+			return (isset($settings[$key])) ? $settings[$key] : $default;
 		}
 		catch(\Exception $e)
 		{
@@ -84,7 +84,7 @@ class Setting {
 	 *
 	 * @return bool
 	 */
-	public function insert($data = array())
+	public function insert($data = [])
 	{
 		foreach ($data as $key => $value)
 		{
