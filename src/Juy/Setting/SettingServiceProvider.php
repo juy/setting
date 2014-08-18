@@ -48,7 +48,7 @@ class SettingServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('setting');
+		return ['setting'];
 	}
 
 }
