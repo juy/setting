@@ -9,6 +9,7 @@ If you'd like to support this and other our creations projects, donate via [PayP
 [![Support via PayPal][paypal-donate-img]][paypal-donate-url]
 
 ----------
+
 ## Installation
 To add juy/setting to your Laravel application, follow these steps:
 
@@ -26,13 +27,7 @@ Add the below line to the `providers` array in `app/config/app.php` configuratio
 'Juy\Setting\SettingServiceProvider',
 ```
 
-Add the below line to the `aliases` array in `app/config/app.php` configuration file.
-
-```php
-'Setting' => 'Juy\Setting\Facades\Setting',
-```
 ## Usage
-
 ```php
 // Get single value
 Setting::get('mail_driver');

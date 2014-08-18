@@ -1,7 +1,7 @@
 <?php namespace Juy\Setting;
 
 use Illuminate\Support\ServiceProvider;
-//use Illuminate\Foundation\AliasLoader;
+use Illuminate\Foundation\AliasLoader;
 
 class SettingServiceProvider extends ServiceProvider {
 
@@ -20,8 +20,14 @@ class SettingServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('juy/setting');
+		
+		// Auto alias
+		$this->app->booting(function()
+		{
+			AliasLoader::getInstance()->alias('Setting', 'Juy\Setting\Facades\Setting');
+		});
 	}
-	
+
 	/**
 	 * Register the service provider.
 	 *
@@ -33,25 +39,16 @@ class SettingServiceProvider extends ServiceProvider {
 		{
 			return new Setting;
 		});
-
-		/*
-		// Auto alias
-		$this->app->booting(function()
-		{
-			$loader = AliasLoader::getInstance();
-			$loader->alias('Setting', 'Juy\Setting\Facades\Setting');
-		});
-		*/
 	}
-	
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return array('setting');
-    }
+
+	/**
+	 * Get the services provided by the provider.
+	 *
+	 * @return array
+	 */
+	public function provides()
+	{
+		return array('setting');
+	}
 
 }
