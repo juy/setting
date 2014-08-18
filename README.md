@@ -16,7 +16,7 @@ To add juy/setting to your Laravel application, follow these steps:
 Add the following to your `composer.json` file:
 
 ```json
-"juy/setting" : "dev-master"
+"juy/setting": "dev-master"
 ```
 
 Then, run `composer update` or `composer install` if you have not already installed packages.
