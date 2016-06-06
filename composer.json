@@ -2,16 +2,17 @@
     "name": "juy/setting",
     "description": "Laravel database settings",
     "keywords": ["laravel","database","settings"],
+    "license": "MIT",
+    "type": "library",
     "homepage": "http://github.com/juy/setting",
     "authors": [
         {
-            "name": "Sevdin Filiz",
+            "name": "Juy Software",
             "role": "Developer",
-            "email": "angelside@users.sourceforge.net",
+            "email": "package@juysoft.com",
             "homepage": "http://juysoft.com"
         }
     ],
-    "license": "MIT",
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "4.2.*",
