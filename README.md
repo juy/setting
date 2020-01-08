@@ -1,6 +1,6 @@
 ## Laravel database settings
 
-![][maintainedstatus-img] [![License][license-img]][license-url] [![Total Downloads] [downloads-img]][downloads-url]
+[![Latest Version on Packagist][ico-version]][link-packagist] [![Software License][ico-license]](LICENSE.txt)
 
 > Store special settings, configs to database. No replace normal laravel config usage, only alternative for site settings.
 
@@ -82,15 +82,11 @@ class SettingsTableSeeder extends \Seeder {
 
 ### License
 
-This project is open-sourced software licensed under the [MIT license][mit-url].
+This project is open-sourced software licensed under the [MIT license](LICENSE.txt).
 
 
 
-[maintainedstatus-img]: http://img.shields.io/badge/project-maintained-brightgreen.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/juy/setting.svg?style=flat-square
+[link-packagist]: https://packagist.org/packages/juy/setting
 
-[license-img]: https://img.shields.io/packagist/l/juy/setting.svg?style=flat-square
-[license-url]: https://packagist.org/packages/juy/setting
-[downloads-img]: https://img.shields.io/packagist/dt/juy/setting.svg?style=flat-square
-[downloads-url]: https://packagist.org/packages/juy/setting
-
-[mit-url]: http://opensource.org/licenses/MIT
+[ico-license]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
